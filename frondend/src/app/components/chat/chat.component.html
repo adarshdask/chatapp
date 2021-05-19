@@ -1,0 +1,30 @@
+<div *ngIf="!username" class="chat-messages">
+    <div class="chat-messages-create-container">
+        <p>Please Enter your name:</p>
+        <input class="chat-messages-create-input" [(ngModel)]="tempName" type="text">
+        <button class="chat-messages-create-button" (click)="submitName();"> Submit </button>
+    </div>
+</div>
+
+<!-- 
+<ul *ngIf="username " class="message-user-sec">
+    <li *ngFor="let user of users">
+        <a href="javascript:void(0);" (click)="getMessages()">
+            {{user.name}}
+        </a>
+    </li>
+</ul> -->
+
+<div *ngIf="username " class="chat-messages">
+    <div class="chat-messages-show-container">
+        <ul *ngFor="let item of messages" class="chat-messages-show-list">
+
+            {{item.message}}
+
+        </ul>
+    </div>
+    <div class="chat-messages-create-container">
+        <input class="chat-messages-create-input" [(ngModel)]="message" type="text">
+        <button class="chat-messages-create-button" (click)="sendMessage()"> Send </button>
+    </div>
+</div>
